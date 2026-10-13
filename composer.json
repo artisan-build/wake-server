@@ -1,18 +1,15 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
     "name": "artisan-build/wake-server",
-    "version": "0.1.0",
     "description": "The ingest, storage, and MCP server package for Wake.",
-    "keywords": ["laravel", "logs", "wake", "mcp"],
+    "keywords": [
+        "laravel",
+        "logs",
+        "wake",
+        "mcp"
+    ],
     "license": "MIT",
     "type": "library",
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../wake-contracts",
-            "options": {"symlink": true}
-        }
-    ],
     "require": {
         "php": "^8.3",
         "artisan-build/built-for-cloud": "^0.19.9",
@@ -44,11 +41,18 @@
         "lint": "pint",
         "lint:test": "pint --test",
         "stan": "phpstan analyse src --level=max --no-progress",
-        "ready": ["@lint:test", "@stan", "@test", "composer audit"]
+        "ready": [
+            "@lint:test",
+            "@stan",
+            "@test",
+            "composer audit"
+        ]
     },
     "extra": {
         "laravel": {
-            "providers": ["ArtisanBuild\\WakeServer\\WakeServerServiceProvider"]
+            "providers": [
+                "ArtisanBuild\\WakeServer\\WakeServerServiceProvider"
+            ]
         }
     },
     "config": {
